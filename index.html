@@ -169,6 +169,8 @@ angular.controller('mojKontroler', function () {
 </code></pre>
 					<pre><code contenteditable="true" class="html">
 &lt;div ng-app="mojaAppka"&gt;
+	&lt;div ng-controller="mojaKontroler as kontroler"&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 					<p>Każda zmienna przekazana do kontekstu (this) będzie dostępna w widoku do użycia w wyrażeniach oraz dyrektywach.</p>
@@ -201,8 +203,10 @@ angular.controller('mojKontroler', function () {
 </code></pre>
 					<pre><code contenteditable="true" class="html">
 &lt;div ng-app="mojaAppka"&gt;
-    <p>{{ obiekt.pierwszaWlasnosc }}</p>
-    <p>{{ tablica[1] }}</p>
+	&lt;div ng-controller="mojKontroler as kontroler"&gt;
+	    <p>{{ kontroler.obiekt.pierwszaWlasnosc }}</p>
+	    <p>{{ kontroler.tablica[1] }}</p>
+	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 				</section>
@@ -217,7 +221,9 @@ angular.controller('mojKontroler', function () {
 </code></pre>
 					<pre><code contenteditable="true" class="html">
 &lt;div ng-app="mojaAppka"&gt;
-    <p ng-repeat="literka in tablica">{{ literka }}</p>
+    &lt;div ng-controller="mojKontroler as kontroler"&gt;
+        <p ng-repeat="literka in kontroler.tablica">{{ literka }}</p>
+    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 				</section>
